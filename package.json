@@ -1,0 +1,36 @@
+{
+  "name": "cypress-cucumber-ts-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:tag": "cypress run --env tags='@test'",
+    "report:generate": "node scripts/generate-report.js",
+    "test:report": "cypress run && node scripts/generate-report.js",
+    "cy:run:features": "cypress run --spec \"cypress/e2e/features/*.feature\"",
+    "cy:parallel": "cypress-parallel -s cy:run:features -t 3 -d \"cypress/e2e/features\"",
+    "cy:parallel:report": "cypress-parallel -s cy:run:features -t 3 -d \"cypress/e2e/features\" && node scripts/generate-report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.13.0",
+    "dotenv": "^17.4.1",
+    "esbuild": "^0.28.0",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "cypress-parallel": "^0.15.0"
+  }
+}

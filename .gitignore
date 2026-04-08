@@ -1,0 +1,6 @@
+node_modules/
+cypress/screenshots/
+runner-results/
+logs/
+dist/
+build/
